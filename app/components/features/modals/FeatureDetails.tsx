@@ -1,4 +1,5 @@
 import Image, { StaticImageData } from "next/image";
+import styles from "./FeatureDetails.module.css";
 
 interface FeatureDetailsProps {
   imgSrc: StaticImageData | string;
@@ -15,9 +16,9 @@ export default function FeatureDetails({
 }: FeatureDetailsProps) {
   return (
     <div>
-      <div className="modal-mask" onClick={onClose}></div>
-      <div className="modal-inner">
-        <Image src={imgSrc} alt={title} className="detail-img"/>
+      <div className={styles.modalMask} onClick={onClose}></div>
+      <div className={styles.modalInner}>
+        <Image src={imgSrc} alt={title} />
         <h3>{title}</h3>
         <p>{description}</p>
       </div>
