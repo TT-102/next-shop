@@ -38,6 +38,7 @@ export default function Feature() {
     title: string;
     description: string;
   } | null>(null);
+
   const handleCardClick = (
     imgSrc: StaticImageData | string,
     title: string,
@@ -46,6 +47,28 @@ export default function Feature() {
     setModalData({ imgSrc, title, description });
     setShowDetails(true);
   };
+
+  const burgerCards = [
+    {
+      imgSrc: Img1,
+      title: "Smashed burger",
+      description:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti veniam ducimus tempora deserunt magni! Temporibus, odio molestiae commodi quam nisi aperiam repellendus. Porro unde deserunt veritatis, totam accusamus vitae sit!",
+    },
+    {
+      imgSrc: Img2,
+      title: "Hamburage måltid",
+      description:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti veniam ducimus tempora deserunt magni! Temporibus, odio molestiae commodi quam nisi aperiam repellendus. Porro unde deserunt veritatis, totam accusamus vitae sit!",
+      additionalClass: "lg:translate-y-[3rem]",
+    },
+    {
+      imgSrc: Img3,
+      title: "Lorem ipsum",
+      description:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti veniam ducimus tempora deserunt magni! Temporibus, odio molestiae commodi quam nisi aperiam repellendus. Porro unde deserunt veritatis, totam accusamus vitae sit!",
+    },
+  ];
 
   return (
     <div>
@@ -57,43 +80,18 @@ export default function Feature() {
           className="w-[100%] lg:w-[80%] mt-[3rem] md:mt-[5rem] mb-[3rem] mx-auto grid grid-cols-1
       md:grid-cols-2 lg:grid-cols-3 gap-{3rem}"
         >
-          <BurgerCard
-            imgSrc={Img1}
-            title="Smashed burger"
-            description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti veniam ducimus tempora deserunt magni! Temporibus, odio molestiae commodi quam nisi aperiam repellendus. Porro unde deserunt veritatis, totam accusamus vitae sit!"
-            onClick={() =>
-              handleCardClick(
-                Img1,
-                "Smashed burger",
-                "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti veniam ducimus tempora deserunt magni!"
-              )
-            }
-          />
-          <BurgerCard
-            imgSrc={Img2}
-            title="Hamburage måltid"
-            description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti veniam ducimus tempora deserunt magni! Temporibus, odio molestiae commodi quam nisi aperiam repellendus. Porro unde deserunt veritatis, totam accusamus vitae sit!"
-            additionalClass="lg:translate-y-[3rem]"
-            onClick={() =>
-              handleCardClick(
-                Img2,
-                "Hamburage måltid",
-                "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti veniam ducimus tempora deserunt magni!"
-              )
-            }
-          />
-          <BurgerCard
-            imgSrc={Img3}
-            title="Lorem ipsum"
-            description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti veniam ducimus tempora deserunt magni! Temporibus, odio molestiae commodi quam nisi aperiam repellendus. Porro unde deserunt veritatis, totam accusamus vitae sit!"
-            onClick={() =>
-              handleCardClick(
-                Img3,
-                "Lorem ipsum",
-                "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti veniam ducimus tempora deserunt magni!"
-              )
-            }
-          />
+          {burgerCards.map((card, index) => (
+            <BurgerCard
+              key={index}
+              imgSrc={card.imgSrc}
+              title={card.title}
+              description={card.description}
+              additionalClass={card.additionalClass}
+              onClick={() =>
+                handleCardClick(card.imgSrc, card.title, card.description)
+              }
+            />
+          ))}
         </div>
       </div>
       <div>

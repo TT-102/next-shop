@@ -33,6 +33,7 @@ export default function Nav({ openNav }: Props) {
           </li>
         </ul>
 
+        {/* todo: fix style for mobile */}
         <div className="flex items-center space-x-4">
           <button
             className="px-6 sm:px-8 sm:py-3 text-[14px] sm:text-[16px] bg-blue-950 
