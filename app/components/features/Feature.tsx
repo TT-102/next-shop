@@ -33,6 +33,19 @@ const BurgerCard: React.FC<BurgerCardProps> = ({
 
 export default function Feature() {
   const [showDetails, setShowDetails] = useState<boolean>(false);
+  const [modalData, setModalData] = useState<{
+    imgSrc: StaticImageData | string;
+    title: string;
+    description: string;
+  } | null>(null);
+  const handleCardClick = (
+    imgSrc: StaticImageData | string,
+    title: string,
+    description: string
+  ) => {
+    setModalData({ imgSrc, title, description });
+    setShowDetails(true);
+  };
 
   return (
     <div>
@@ -48,7 +61,13 @@ export default function Feature() {
             imgSrc={Img1}
             title="Smashed burger"
             description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti veniam ducimus tempora deserunt magni! Temporibus, odio molestiae commodi quam nisi aperiam repellendus. Porro unde deserunt veritatis, totam accusamus vitae sit!"
-            onClick={() => setShowDetails(true)}
+            onClick={() =>
+              handleCardClick(
+                Img1,
+                "Smashed burger",
+                "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti veniam ducimus tempora deserunt magni!"
+              )
+            }
           />
           <BurgerCard
             imgSrc={Img2}
@@ -64,8 +83,13 @@ export default function Feature() {
         </div>
       </div>
       <div>
-        {showDetails && (
-          <FeatureDetails onClose={() => setShowDetails(false)} />
+        {showDetails && modalData && (
+          <FeatureDetails
+            imgSrc={modalData.imgSrc}
+            title={modalData.title}
+            description={modalData.description}
+            onClose={() => setShowDetails(false)}
+          />
         )}
       </div>
     </div>
