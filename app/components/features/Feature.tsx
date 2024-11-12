@@ -23,7 +23,7 @@ const BurgerCard: React.FC<BurgerCardProps> = ({
 }) => (
   <div
     onClick={onClick}
-    className={`p-6 hover:bg-white rounded-lg hover:rounded-3xl transition-all duration-200 ${additionalClass}`}
+    className={`card-wrapper p-6 hover:bg-white rounded-lg hover:rounded-3xl transition-all duration-200 ${additionalClass}`}
   >
     <Image src={imgSrc} alt={title} className="rounded-3xl" />
     <h3 className="font-semibold text-[20px] mt-[20px]">{title}</h3>
@@ -74,11 +74,25 @@ export default function Feature() {
             title="Hamburage måltid"
             description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti veniam ducimus tempora deserunt magni! Temporibus, odio molestiae commodi quam nisi aperiam repellendus. Porro unde deserunt veritatis, totam accusamus vitae sit!"
             additionalClass="lg:translate-y-[3rem]"
+            onClick={() =>
+              handleCardClick(
+                Img2,
+                "Hamburage måltid",
+                "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti veniam ducimus tempora deserunt magni!"
+              )
+            }
           />
           <BurgerCard
             imgSrc={Img3}
             title="Lorem ipsum"
             description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti veniam ducimus tempora deserunt magni! Temporibus, odio molestiae commodi quam nisi aperiam repellendus. Porro unde deserunt veritatis, totam accusamus vitae sit!"
+            onClick={() =>
+              handleCardClick(
+                Img3,
+                "Lorem ipsum",
+                "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti veniam ducimus tempora deserunt magni!"
+              )
+            }
           />
         </div>
       </div>

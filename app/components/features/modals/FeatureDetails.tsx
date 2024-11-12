@@ -17,7 +17,7 @@ export default function FeatureDetails({
     <div>
       <div className="modal-mask" onClick={onClose}></div>
       <div className="modal-inner">
-        <Image src={imgSrc} alt={title} />
+        <Image src={imgSrc} alt={title} className="detail-img"/>
         <h3>{title}</h3>
         <p>{description}</p>
       </div>
