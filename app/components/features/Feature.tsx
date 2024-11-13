@@ -72,7 +72,6 @@ export default function Feature() {
 
   return (
     <div>
-      {" "}
       <div className="pt-[5rem] pb-[3rem]">
         <h1 className="heading">Hamburgare tillagad med kärlek</h1>
 
