@@ -50,7 +50,10 @@ export default function Signin() {
   return (
     <div>
       {/* logo */}
-      <div className="flex items-center space-x-2 justify-center heading">
+      <div
+        className="flex items-center space-x-2 justify-center heading"
+        style={{ marginBottom: "10px" }}
+      >
         <FaBurger className="w-[1.2rem] h-[1.2rem] sm:w-[1.4rem] sm:h-[1.4rem] text-orange-500" />
         <h2 className="text-[20px] sm:text-[30px] font-semibold">NextShop</h2>
       </div>

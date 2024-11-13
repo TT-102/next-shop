@@ -21,8 +21,7 @@
   }
 
   .heading {
-    @apply text-[30px] md:text-[35px] lg:text-[40px] uppercase font-bold text-gray-900
-    md:leading-[4rem] leading-[3rem] text-center;
+    @apply text-[30px] md:text-[35px] lg:text-[40px] uppercase font-bold text-gray-900 md:leading-[4rem] leading-[3rem] text-center;
   }
 }
 
@@ -72,6 +71,11 @@
   text-indent: 35px;
   padding: 10px;
   font-size: 16px;
+}
+
+.user-info:focus {
+  border-color: rgb(29, 29, 29);
+  outline: none;
 }
 
 .btn {
@@ -227,7 +231,8 @@ button:disabled {
     display: flex !important;
     font-size: 18px;
     animation: scale 0.5s linear;
-    color: rgb(234, 88, 12);
+    /* color: rgb(234, 88, 12); */
+    color: white;
 
     svg {
       transform-origin: center center;
@@ -245,15 +250,19 @@ button:disabled {
   0% {
     transform: scale(10);
   }
+
   50% {
     transform: scale(0.7);
   }
+
   70% {
     transform: scale(1);
   }
+
   90% {
     transform: scale(0.7);
   }
+
   100% {
     transform: scale(1);
   }
