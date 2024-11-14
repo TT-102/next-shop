@@ -1,6 +1,6 @@
 import { useState } from "react";
 import CreateAccount from "./CreateAccount";
-import styles from "./MemberModal.module.css";
+import styles from "./styles/MemberModal.module.css";
 import Signin from "./Signin";
 import { FaBurger } from "react-icons/fa6";
 import { FaArrowUp } from "react-icons/fa6";

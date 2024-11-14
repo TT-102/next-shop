@@ -25,7 +25,7 @@ export default function CreateAccount({ toggleContent }: CreateAccountProps) {
           Är du redan medlem?
         </p>
       </div>
-      <button className="btn secondary-button" onClick={toggleContent}>
+      <button className="btn secondaryBtn" onClick={toggleContent}>
         Logga in
       </button>
     </div>

@@ -1,7 +1,7 @@
 import { FaBurger } from "react-icons/fa6";
 import Link from "next/link";
 import { IoPersonCircleOutline } from "react-icons/io5";
-import { BsBagHeartFill } from "react-icons/bs";
+// import { BsBagHeartFill } from "react-icons/bs";
 import { HiBars3BottomRight } from "react-icons/hi2";
 import MemberModal from "./membership/MemberModal";
 import { useState } from "react";

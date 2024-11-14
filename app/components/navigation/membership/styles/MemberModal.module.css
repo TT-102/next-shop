@@ -52,3 +52,49 @@
   margin-right: 0.5rem;
   font-size: 1rem;
 }
+
+.inputGroup {
+  align-items: center;
+  margin-bottom: 22px;
+  position: relative;
+  width: 100%;
+}
+
+.inputLabel {
+  font-size: 12px;
+  font-weight: 500;
+  padding: 0 5px;
+  background-color: white;
+  position: absolute;
+  top: -10px;
+  left: 5px;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.inputIcons {
+  color: rgb(158, 158, 158);
+  font-size: 25px;
+  position: absolute;
+  top: 50%;
+  left: 23px;
+  transform: translate(-50%, -50%);
+}
+
+.activeLabel {
+  opacity: 1;
+}
+
+.userInfo {
+  width: 100%;
+  line-height: 27px;
+  border-radius: 7px;
+  border: 1px solid rgb(36, 36, 36);
+  text-indent: 35px;
+  padding: 10px;
+  font-size: 16px;
+}
+
+.userInfo:focus {
+  outline-color: rgb(4, 120, 87);
+}
