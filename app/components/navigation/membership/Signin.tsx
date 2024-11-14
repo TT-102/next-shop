@@ -45,8 +45,8 @@ export default function Signin({ toggleContent }: SigninProps) {
     setWaitingForLogin("loading");
     // Simulate login process
     setTimeout(() => {
-      // Set to 'success' or 'failed' based on your logic
-      setWaitingForLogin("success"); // or "failed" for error simulation
+      // Set to 'success' or 'failed'
+      setWaitingForLogin("success");
     }, 2000);
   };
 
@@ -106,35 +106,39 @@ export default function Signin({ toggleContent }: SigninProps) {
           />
         </div>
       </div>
+
+      {waitingForLogin === "failed" && (
+        <div>
+          <p style={{ color: "darkred", marginBottom: "20px" }}>
+            Fel inloggningsuppgifter
+          </p>
+        </div>
+      )}
+
       <button
-        className="main-btn btn"
+        className={`main-btn btn     ${
+          waitingForLogin === "failed" ? "failed" : ""
+        } 
+        ${waitingForLogin === "success" ? "success" : ""}`}
         onClick={handleLoginClick}
         disabled={waitingForLogin === "success"}
       >
-        <span className="submit">Logga in</span>
-
-        {/* Loading State */}
-        {waitingForLogin === "loading" && (
+        {/* Conditional Text and Icon Rendering */}
+        {waitingForLogin === "loading" ? (
           <span className="loading">
-            <HiMiniArrowPath
-              style={{ color: "white", transform: "scaleX(-1)" }}
-            />
+            <HiMiniArrowPath className="spinner" />
           </span>
-        )}
-
-        {/* Success State */}
-        {waitingForLogin === "success" && (
+        ) : waitingForLogin === "success" ? (
           <span className="check">
             <FaCheck style={{ marginRight: "10px" }} />
           </span>
-        )}
-
-        {/* Error State */}
-        {waitingForLogin === "failed" && (
+        ) : waitingForLogin === "failed" ? (
           <span className="check">
-            <BsRobot style={{ marginRight: "4px", fontSize: "23px" }} />
-            Fel inloggningsuppgifter
+            <BsRobot style={{ marginRight: "10px", fontSize: "23px" }} />
+            Eh...
           </span>
+        ) : (
+          <span className="submit">Logga in</span>
         )}
       </button>
 
