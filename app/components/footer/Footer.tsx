@@ -1,6 +1,8 @@
 import { BiPhone } from "react-icons/bi";
 import Reservation from "./Reservation";
 
+//todo: add function to call when user clicked on "Ring oss"
+
 export default function Footer() {
   return (
     <div

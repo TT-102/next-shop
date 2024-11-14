@@ -1,5 +1,6 @@
 import { GrRestaurant } from "react-icons/gr";
 
+//todo: send email whem clicked on "Boka"
 export default function Reservation() {
   return (
     <div className="bg-green-700 p-6 rounded-lg">
