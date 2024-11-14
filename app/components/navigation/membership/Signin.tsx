@@ -1,12 +1,15 @@
 import { useState, FocusEvent } from "react";
-import { FaBurger } from "react-icons/fa6";
 import { IoMail } from "react-icons/io5";
 import { RiLockPasswordFill } from "react-icons/ri";
 import { FaCheck } from "react-icons/fa";
 import { HiMiniArrowPath } from "react-icons/hi2";
 import { BsRobot } from "react-icons/bs";
 
-export default function Signin() {
+interface SigninProps {
+  toggleContent: () => void;
+}
+
+export default function Signin({ toggleContent }: SigninProps) {
   const [activeInput, setActiveInput] = useState<string | null>(null);
   const [email, setEmail] = useState<string>("");
   const [emailValid, setEmailValid] = useState<boolean>(true);
@@ -49,15 +52,6 @@ export default function Signin() {
 
   return (
     <div>
-      {/* logo */}
-      <div
-        className="flex items-center space-x-2 justify-center heading"
-        style={{ marginBottom: "10px" }}
-      >
-        <FaBurger className="w-[1.2rem] h-[1.2rem] sm:w-[1.4rem] sm:h-[1.4rem] text-orange-500" />
-        <h2 className="text-[20px] sm:text-[30px] font-semibold">NextShop</h2>
-      </div>
-
       <div className="input-group">
         <label
           className={`input-label ${
@@ -113,7 +107,7 @@ export default function Signin() {
         </div>
       </div>
       <button
-        className="login-btn btn"
+        className="main-btn btn"
         onClick={handleLoginClick}
         disabled={waitingForLogin === "success"}
       >
@@ -142,6 +136,30 @@ export default function Signin() {
             Fel inloggningsuppgifter
           </span>
         )}
+      </button>
+
+      <div style={{ position: "relative", margin: "1em 0" }}>
+        <hr style={{ margin: "35px 0", border: "1px solid lightgrey" }} />
+        <p
+          style={{
+            fontSize: "14px",
+            letterSpacing: "2px",
+            position: "absolute",
+            top: "-10px",
+            left: "0",
+            right: "0",
+            background: "white",
+            padding: "0 5px",
+            width: "fit-content",
+            margin: "auto",
+          }}
+        >
+          Är du inte medlem än?
+        </p>
+      </div>
+
+      <button className="btn secondary-button" onClick={toggleContent}>
+        Bli medlem
       </button>
     </div>
   );

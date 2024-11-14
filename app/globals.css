@@ -96,15 +96,6 @@ button:disabled {
   color: rgb(206, 206, 206);
 }
 
-.signup-btn {
-  margin-top: 1.5em;
-  color: darkGrey;
-  background: white;
-  border: 1px solid darkGrey;
-  border-radius: 25px;
-  box-shadow: unset;
-}
-
 .warning {
   background: rgb(255, 243, 243);
 }
@@ -114,7 +105,7 @@ button:disabled {
   font-weight: 500;
 }
 
-.login-btn {
+.main-btn {
   position: relative;
   padding: 25px;
   border: none;
@@ -212,7 +203,7 @@ button:disabled {
   }
 }
 
-.login-btn .check {
+.main-btn .check {
   animation: fadeIn 0.1s linear;
   font-size: 30px;
 }
@@ -266,4 +257,13 @@ button:disabled {
   100% {
     transform: scale(1);
   }
+}
+
+.secondary-button {
+  margin-top: 1.5em;
+  color: rgb(30, 30, 30);
+  background: white;
+  border: 1px solid rgb(30, 30, 30);
+  border-radius: 25px;
+  box-shadow: unset;
 }

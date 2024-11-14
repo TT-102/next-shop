@@ -13,7 +13,7 @@ interface Props {
 export default function Nav({ openNav }: Props) {
   const [showMemberModal, handleMemberModal] = useState<boolean>(false);
   return (
-    <div className="h-[12vh] bg-white">
+    <div className="h-[8vh] bg-white">
       <div className="sm:w-[90%] w-[95%] mx-auto flex h-[100%] item-center justify-between">
         {/* logo */}
         <div className="flex items-center space-x-2">
