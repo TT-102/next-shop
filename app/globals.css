@@ -99,11 +99,6 @@ button:disabled {
   background: rgb(255, 243, 243);
 }
 
-.login-failed {
-  color: darkRed;
-  font-weight: 500;
-}
-
 .main-btn {
   position: relative;
   padding: 25px;
@@ -173,30 +168,24 @@ button:disabled {
   display: none;
 }
 
-.finished,
+.success,
 .failed {
   background-color: lighten(orange 5%);
-
-  .submit,
-  .loading {
-    display: none;
-  }
 }
 
 .submit {
   background-color: inherit;
 }
 
-/* .finished .check {
+.success .check {
   display: inline-flex !important;
   font-size: 18px;
   animation: scale 0.5s linear;
   color: white;
-
-  svg {
-    transform-origin: center center;
-  }
-} */
+}
+.success .check svg {
+  transform-origin: center center;
+}
 
 .main-btn .check {
   animation: fadeIn 0.1s linear;
@@ -228,14 +217,16 @@ button:disabled {
   height: 100%;
 }
 
-.failed .check {
+.failed .check,
+.success .check {
   display: flex !important;
   font-size: 18px;
   animation: scale 0.5s linear;
   color: white;
 }
 
-.failed svg {
+.failed svg,
+.success svg {
   transform-origin: center center;
   font-size: 20px;
 }

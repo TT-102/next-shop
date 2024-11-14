@@ -45,8 +45,14 @@ export default function Signin({ toggleContent }: SigninProps) {
     setWaitingForLogin("loading");
     // Simulate login process
     setTimeout(() => {
-      // Set to 'success' or 'failed'
+      //test
+      // Animation for 'success' or 'failed'
+      // setWaitingForLogin("failed");
       setWaitingForLogin("success");
+
+      setTimeout(() => {
+        setWaitingForLogin("");
+      }, 4000);
     }, 2000);
   };
 
@@ -116,7 +122,7 @@ export default function Signin({ toggleContent }: SigninProps) {
       )}
 
       <button
-        className={`main-btn btn     ${
+        className={`main-btn btn ${
           waitingForLogin === "failed" ? "failed" : ""
         } 
         ${waitingForLogin === "success" ? "success" : ""}`}
