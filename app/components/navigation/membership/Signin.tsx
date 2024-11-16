@@ -70,7 +70,7 @@ export default function Signin({ toggleContent }: SigninProps) {
         <div style={{ position: "relative", display: "contents" }}>
           <IoMail className={`${styles.inputIcons}`} />
           <input
-            type="password"
+            type="mail"
             className={`${styles.userInfo} ${
               waitingForLogin === "dataNotValid" && (!password || !emailValid)
                 ? "warning"
@@ -97,7 +97,7 @@ export default function Signin({ toggleContent }: SigninProps) {
         <div style={{ position: "relative", display: "contents" }}>
           <RiLockPasswordFill className={`${styles.inputIcons}`} />
           <input
-            type="email"
+            type="password"
             className={`${styles.userInfo} ${
               waitingForLogin === "dataNotValid" &&
               (!password || !passwordValid)

@@ -74,7 +74,7 @@
 
 .inputIcons {
   color: rgb(158, 158, 158);
-  font-size: 25px;
+  font-size: 22px;
   position: absolute;
   top: 50%;
   left: 23px;
@@ -90,7 +90,7 @@
   line-height: 27px;
   border-radius: 7px;
   border: 1px solid rgb(36, 36, 36);
-  text-indent: 35px;
+  text-indent: 33px;
   padding: 10px;
   font-size: 16px;
 }
