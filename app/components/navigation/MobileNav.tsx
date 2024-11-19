@@ -13,6 +13,7 @@ export default function MobileNav({ showNav, closeNav }: Props) {
     <div
       className={`${navStyle} fixed right-0 transition-all duration-500 left-0 top-0 bottom-0 h-[100vh] 
     bg-[#000000e0] z-[1002]`}
+      onClick={closeNav}
     >
       <ImCross
         onClick={closeNav}
@@ -28,7 +29,7 @@ export default function MobileNav({ showNav, closeNav }: Props) {
             <Link href="/">HEM</Link>
           </li>
           <li className="text-[18px] font-medium tracking-wide text-white">
-            <Link href="/">BUTIK</Link>
+            <Link href="/about">OM OSS</Link>
           </li>
           <li className="text-[18px] font-medium tracking-wide text-white">
             <Link href="/">MENY</Link>

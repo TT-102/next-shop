@@ -16,17 +16,17 @@ export default function Nav({ openNav }: Props) {
     <div className="h-[8vh] bg-white">
       <div className="sm:w-[90%] w-[95%] mx-auto flex h-[100%] item-center justify-between">
         {/* logo */}
-        <div className="flex items-center space-x-2">
+        <Link href="/" passHref className="flex items-center space-x-2">
           <FaBurger className="w-[1.2rem] h-[1.2rem] sm:w-[1.4rem] sm:h-[1.4rem] text-orange-500" />
           <h2 className="text-[20px] sm:text-[30px] font-semibold">NextShop</h2>
-        </div>
+        </Link>
 
         <ul className="hidden lg:flex items-center space-x-10">
           <li className="text-[18px] font-medium hover:text-orange-600 tracking-wide">
             <Link href="/">HEM</Link>
           </li>
           <li className="text-[18px] font-medium hover:text-orange-600 tracking-wide">
-            <Link href="/">BUTIK</Link>
+            <Link href="/about">OM OSS</Link>
           </li>
           <li className="text-[18px] font-medium hover:text-orange-600 tracking-wide">
             <Link href="/">MENY</Link>
