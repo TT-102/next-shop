@@ -1,5 +1,71 @@
+.aboutpageWrapper {
+  position: relative;
+  width: 100%;
+  height: 400px;
+}
+
+/* .textBox {
+  width: fit-content;
+  height: fit-content;
+  align-self: center;
+  background: rgba(223, 223, 223, 0.791);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+  border: 1px solid white;
+  padding: 15px;
+  border-radius: 10px;
+} */
+.verticalText {
+  position: absolute;
+  left: -50px;
+  top: 50%;
+  transform: translateY(-50%) rotate(-90deg);
+  font-size: 50px;
+  font-weight: bold;
+  letter-spacing: 4px;
+  color: #ffffff;
+  opacity: 0.7;
+  white-space: nowrap;
+}
+
 .aboutHeader {
   font-size: 20px;
   font-weight: 700;
   text-align: center;
+}
+
+.imgWrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    155deg,
+    rgb(143, 196, 143) 60%,
+    rgb(234, 88, 12) 40%
+  );
+  z-index: 1;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+  display: flex;
+  justify-content: center;
+}
+.burgerImg {
+  position: relative;
+  width: 500px;
+  height: 100%;
+  object-fit: contain;
+  z-index: 2;
+}
+
+@media (max-width: 768px) {
+  .verticalText {
+    left: -70px;
+  }
+}
+
+@media (max-width: 350px) {
+  .burgerImg {
+    width: 300px;
+  }
 }
