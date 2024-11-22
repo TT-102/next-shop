@@ -34,7 +34,7 @@ export default function AboutPage() {
     loadPokemons();
   }, []);
 
-  if (loading) return <p>Loading...</p>;
+  if (loading) return <div className={styles.loader}></div>;
   if (error) return <p>{error}</p>;
 
   return (
@@ -60,11 +60,11 @@ export default function AboutPage() {
         <div>
           {pokemons.map((pokemon) => (
             <div key={pokemon.id}>
+              <img src={pokemon.image} alt="chef-pokemon" />
               <h3>{pokemon.name}</h3>
               <p>Height: {pokemon.height}</p>
               <p>Weight: {pokemon.weight}</p>
               <p>Base experience: {pokemon.base_experience}</p>
-              <img src={pokemon.image} alt="chef-pokemon" />
             </div>
           ))}
         </div>
