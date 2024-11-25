@@ -2,7 +2,7 @@
 import styles from "./page.module.css";
 import Image from "next/image";
 import BurgerIgm2 from "@/public/images/b2.png";
-import { fetchPokemons } from "../lib/graphqlClient";
+import { fetchPokemons } from "@/app/lib/graphqlClient";
 import { useEffect, useState } from "react";
 
 type Pokemon = {
@@ -34,7 +34,7 @@ export default function AboutPage() {
     loadPokemons();
   }, []);
 
-  if (loading) return <div className={styles.loader}></div>;
+  if (loading) return <div className="loader"></div>;
   if (error) return <p>{error}</p>;
 
   return (
