@@ -29,55 +29,6 @@
   cursor: pointer;
 }
 
-/* test */
-
-.input-group {
-  align-items: center;
-  margin-bottom: 22px;
-  position: relative;
-  width: 100%;
-}
-
-.input-label {
-  font-size: 12px;
-  font-weight: 500;
-  padding: 0 5px;
-  background-color: white;
-  position: absolute;
-  top: -10px;
-  left: 5px;
-  opacity: 0;
-  transition: opacity 0.2s ease;
-}
-
-.input-icons {
-  color: rgb(158, 158, 158);
-  font-size: 25px;
-  position: absolute;
-  top: 50%;
-  left: 23px;
-  transform: translate(-50%, -50%);
-}
-
-.activeLabel {
-  opacity: 1;
-}
-
-.user-info {
-  width: 100%;
-  line-height: 27px;
-  border-radius: 7px;
-  border: 1px solid rgb(158, 158, 158);
-  text-indent: 35px;
-  padding: 10px;
-  font-size: 16px;
-}
-
-.user-info:focus {
-  border-color: rgb(29, 29, 29);
-  outline: none;
-}
-
 .btn {
   border: none;
   border-radius: 11px;
@@ -100,12 +51,7 @@ button:disabled {
   background: rgb(255, 243, 243);
 }
 
-.login-failed {
-  color: darkRed;
-  font-weight: 500;
-}
-
-.main-btn {
+.mainBtn {
   position: relative;
   padding: 25px;
   border: none;
@@ -149,86 +95,52 @@ button:disabled {
   }
 }
 
-.active {
-  background-color: rgb(234, 88, 12);
-
-  &:before {
-    width: 100%;
-    transition: width 0.5s linear;
-  }
-
-  span {
-    &:nth-of-type(1) {
-      top: -100%;
-      transform: translateY(-50%);
-    }
-
-    &:nth-of-type(2) {
-      top: 50%;
-      transform: translateY(-50%);
-
-      svg {
-        animation: loadingAni reverse 2s linear infinite;
-      }
-    }
-
-    &:nth-of-type(3) {
-      display: none;
-    }
-  }
-}
-
-.finished,
-.failed {
-  background-color: lighten(orange 5%);
-
-  .submit,
-  .loading {
-    display: none;
-  }
-}
-
 .submit {
   background-color: inherit;
 }
 
-.finished .check {
-  display: inline-flex !important;
-  font-size: 18px;
-  animation: scale 0.5s linear;
+.mainBtn .check {
+  animation: fadeIn 0.1s linear;
+  font-size: 30px;
   color: white;
-
-  svg {
-    transform-origin: center center;
-  }
 }
 
-.main-btn .check {
-  animation: fadeIn 0.1s linear;
+.mainBtn .spinner {
+  animation: spin 1s linear infinite;
+  color: white;
   font-size: 30px;
 }
 
-.failed {
-  &:before {
-    position: absolute;
-    content: "";
-    bottom: 0;
-    left: 0;
-    width: 0%;
-    height: 100%;
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
   }
-
-  .check {
-    display: flex !important;
-    font-size: 18px;
-    animation: scale 0.5s linear;
-    /* color: rgb(234, 88, 12); */
-    color: white;
-
-    svg {
-      transform-origin: center center;
-    }
+  to {
+    transform: rotate(360deg);
   }
+}
+
+.failed:before {
+  position: absolute;
+  content: "";
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+}
+
+.failed .check,
+.success .check {
+  display: flex !important;
+  font-size: 18px;
+  animation: scale 0.5s linear;
+  color: white;
+}
+
+.failed svg,
+.success svg {
+  transform-origin: center center;
+  font-size: 20px;
 }
 
 @keyframes loadingAni {
@@ -239,11 +151,11 @@ button:disabled {
 
 @keyframes scale {
   0% {
-    transform: scale(10);
+    transform: scale(3);
   }
 
   50% {
-    transform: scale(0.7);
+    transform: scale(0.8);
   }
 
   70% {
@@ -251,7 +163,7 @@ button:disabled {
   }
 
   90% {
-    transform: scale(0.7);
+    transform: scale(0.8);
   }
 
   100% {
@@ -259,11 +171,12 @@ button:disabled {
   }
 }
 
-.secondary-button {
+.secondaryBtn {
   margin-top: 1.5em;
   color: rgb(30, 30, 30);
   background: white;
-  border: 1px solid rgb(30, 30, 30);
+  border: 1.5px solid rgb(30, 30, 30);
   border-radius: 25px;
   box-shadow: unset;
+  font-weight: 700;
 }

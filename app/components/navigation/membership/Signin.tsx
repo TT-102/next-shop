@@ -1,3 +1,4 @@
+import styles from "./styles/MemberModal.module.css";
 import { useState, FocusEvent } from "react";
 import { IoMail } from "react-icons/io5";
 import { RiLockPasswordFill } from "react-icons/ri";
@@ -45,26 +46,32 @@ export default function Signin({ toggleContent }: SigninProps) {
     setWaitingForLogin("loading");
     // Simulate login process
     setTimeout(() => {
-      // Set to 'success' or 'failed' based on your logic
-      setWaitingForLogin("success"); // or "failed" for error simulation
+      //test
+      // Animation for 'success' or 'failed'
+      setWaitingForLogin("failed");
+      // setWaitingForLogin("success");
+
+      setTimeout(() => {
+        setWaitingForLogin("");
+      }, 4000);
     }, 2000);
   };
 
   return (
     <div>
-      <div className="input-group">
+      <div className={`${styles.inputGroup}`}>
         <label
-          className={`input-label ${
-            activeInput === "Mejl" ? "activeLabel" : ""
+          className={`${styles.inputLabel} ${
+            activeInput === "Mejl" ? `${styles.activeLabel}` : ""
           }`}
         >
           Mejl
         </label>
         <div style={{ position: "relative", display: "contents" }}>
-          <IoMail className="input-icons" />
+          <IoMail className={`${styles.inputIcons}`} />
           <input
-            type="password"
-            className={`user-info ${
+            type="mail"
+            className={`${styles.userInfo} ${
               waitingForLogin === "dataNotValid" && (!password || !emailValid)
                 ? "warning"
                 : ""
@@ -79,19 +86,19 @@ export default function Signin({ toggleContent }: SigninProps) {
         </div>
       </div>
 
-      <div className="input-group">
+      <div className={`${styles.inputGroup}`}>
         <label
-          className={`input-label ${
-            activeInput === "Lösenord" ? "activeLabel" : ""
+          className={`${styles.inputLabel} ${
+            activeInput === "Lösenord" ? `${styles.activeLabel}` : ""
           }`}
         >
           Lösenord
         </label>
         <div style={{ position: "relative", display: "contents" }}>
-          <RiLockPasswordFill className="input-icons" />
+          <RiLockPasswordFill className={`${styles.inputIcons}`} />
           <input
-            type="email"
-            className={`user-info ${
+            type="password"
+            className={`${styles.userInfo} ${
               waitingForLogin === "dataNotValid" &&
               (!password || !passwordValid)
                 ? "warning"
@@ -106,35 +113,37 @@ export default function Signin({ toggleContent }: SigninProps) {
           />
         </div>
       </div>
+
+      {waitingForLogin === "failed" && (
+        <div>
+          <p style={{ color: "darkred", marginBottom: "20px" }}>
+            Inloggningen misslyckades
+          </p>
+        </div>
+      )}
+
       <button
-        className="main-btn btn"
+        className={`mainBtn btn ${waitingForLogin === "failed" ? "failed" : ""} 
+        ${waitingForLogin === "success" ? "success" : ""}`}
         onClick={handleLoginClick}
         disabled={waitingForLogin === "success"}
       >
-        <span className="submit">Logga in</span>
-
-        {/* Loading State */}
-        {waitingForLogin === "loading" && (
+        {/* Conditional Text and Icon Rendering */}
+        {waitingForLogin === "loading" ? (
           <span className="loading">
-            <HiMiniArrowPath
-              style={{ color: "white", transform: "scaleX(-1)" }}
-            />
+            <HiMiniArrowPath className="spinner" />
           </span>
-        )}
-
-        {/* Success State */}
-        {waitingForLogin === "success" && (
+        ) : waitingForLogin === "success" ? (
           <span className="check">
             <FaCheck style={{ marginRight: "10px" }} />
           </span>
-        )}
-
-        {/* Error State */}
-        {waitingForLogin === "failed" && (
+        ) : waitingForLogin === "failed" ? (
           <span className="check">
-            <BsRobot style={{ marginRight: "4px", fontSize: "23px" }} />
-            Fel inloggningsuppgifter
+            <BsRobot style={{ marginRight: "10px", fontSize: "23px" }} />
+            Eh...
           </span>
+        ) : (
+          <span className="submit">Logga in</span>
         )}
       </button>
 
@@ -158,7 +167,7 @@ export default function Signin({ toggleContent }: SigninProps) {
         </p>
       </div>
 
-      <button className="btn secondary-button" onClick={toggleContent}>
+      <button className="btn secondaryBtn" onClick={toggleContent}>
         Bli medlem
       </button>
     </div>

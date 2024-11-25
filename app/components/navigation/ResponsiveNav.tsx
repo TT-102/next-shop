@@ -8,9 +8,9 @@ export default function ResponsiveNav() {
   const openNavHandler = () => setShowNav(true);
   const closeNavHandler = () => setShowNav(false);
   return (
-    <div>
+    <nav>
       <Nav openNav={openNavHandler} />
       <MobileNav showNav={showNav} closeNav={closeNavHandler} />
-    </div>
+    </nav>
   );
 }
