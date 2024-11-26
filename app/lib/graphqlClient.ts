@@ -26,7 +26,7 @@ export const fetchPokemons = async (): Promise<Pokemon[]> => {
   
   const query = `
     query {
-      pokemon_v2_pokemon(limit: 2) {
+      pokemon_v2_pokemon(limit: 4) {
         id
         name
         height

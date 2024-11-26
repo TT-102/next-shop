@@ -57,14 +57,18 @@ export default function AboutPage() {
 
       <div className={styles.aboutChefs}>
         <h1>Våra kockar och deras expertis</h1>
-        <div>
+        <div className={styles.boxes}>
           {pokemons.map((pokemon) => (
             <div key={pokemon.id}>
-              <img src={pokemon.image} alt="chef-pokemon" />
-              <h3>{pokemon.name}</h3>
-              <p>Height: {pokemon.height}</p>
-              <p>Weight: {pokemon.weight}</p>
-              <p>Base experience: {pokemon.base_experience}</p>
+              <div className={styles.chefWrapper}>
+                <div className={styles.chefInfo}>
+                  <h3>{pokemon.name}</h3>
+                  <p>Height: {pokemon.height}</p>
+                  <p>Weight: {pokemon.weight}</p>
+                  <p>Base experience: {pokemon.base_experience}</p>{" "}
+                </div>
+                <img src={pokemon.image} alt="chef-pokemon" />
+              </div>
             </div>
           ))}
         </div>
