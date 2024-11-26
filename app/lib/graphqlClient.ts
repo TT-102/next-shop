@@ -32,6 +32,14 @@ export const fetchPokemons = async (): Promise<Pokemon[]> => {
         height
         weight
         base_experience
+        pokemon_v2_pokemonabilities {
+          pokemon_v2_ability {
+            id
+            name
+            generation_id
+            is_main_series
+          }
+        }
       }
     }
   `;
