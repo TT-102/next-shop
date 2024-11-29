@@ -86,17 +86,14 @@
   position: relative;
   margin: 2em;
   margin-bottom: 6em;
+  padding: 20px;
 }
 
 .chefWrapper img {
   position: absolute;
   right: -2.5em;
-  top: 6.5em;
-  width: 300px;
-}
-
-.chefInfo {
-  padding: 20px;
+  bottom: -2.5em;
+  width: 200px;
 }
 
 .chefInfo h3 {
@@ -109,6 +106,12 @@
 @media (max-width: 768px) {
   .verticalText {
     left: -70px;
+  }
+}
+
+@media (max-width: 650px) {
+  .chefWrapper {
+    width: 250px;
   }
 }
 
