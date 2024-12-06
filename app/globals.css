@@ -25,6 +25,11 @@
   }
 }
 
+body {
+  max-width: 1550px;
+  margin: auto;
+}
+
 .card-wrapper {
   cursor: pointer;
 }

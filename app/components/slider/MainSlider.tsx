@@ -39,6 +39,7 @@ const BurgerSection: React.FC<BurgerSectionProps> = ({
 }) => (
   <div
     className={`${imgBackground} w-full h-[88vh] flex items-center justify-center flex-col md:clip_path`}
+    style={{ borderRadius: "18px" }}
   >
     <div className="w-[90%] lg:w-[80%] grid grid-cols-1 md:grid-cols-2 justify-center items-center gap-[2em] mx-auto">
       <Image src={imgSrc} alt={imgAlt} className="hidden md:block" />

@@ -26,7 +26,7 @@ export const fetchPokemons = async (): Promise<Pokemon[]> => {
   
   const query = `
     query {
-      pokemon_v2_pokemon(limit: 4, order_by: { weight: asc, height: desc }) {
+      pokemon_v2_pokemon(limit: 6, order_by: { weight: asc, height: desc }) {
         id
         name
         height
