@@ -4,6 +4,7 @@ import Image from "next/image";
 import BurgerIgm2 from "@/public/images/b2.png";
 import { fetchPokemons } from "@/app/lib/graphqlClient";
 import { useEffect, useState } from "react";
+import Staff from "./components/Staff";
 
 interface LocationArea {
   name: string;
@@ -20,7 +21,7 @@ type Pokemon = {
   weight: number;
   base_experience: number;
   image: string;
-  pokemon_v2_encounters: Encounter[];
+  pokemon_v2_encounters?: Encounter[];
 };
 
 export default function AboutPage() {
@@ -64,45 +65,7 @@ export default function AboutPage() {
         </div>
       </div>
 
-      <div className={styles.aboutChefs}>
-        <h1>Våra kockar och deras expertis</h1>
-        <div className={styles.boxes}>
-          {pokemons.map((pokemon) => (
-            <div key={pokemon.id}>
-              <div className={styles.chefWrapper}>
-                <div className={styles.chefInfo}>
-                  <h3>{pokemon.name}</h3>
-                  <p>Height: {pokemon.height}</p>
-                  <p>Weight: {pokemon.weight}</p>
-                  <p>Base experience: {pokemon.base_experience}</p>
-                </div>
-                
-                {/* Show location if it exists */}
-                {pokemon.pokemon_v2_encounters?.some(
-                  (encounter) => encounter.pokemon_v2_locationarea?.name
-                ) && (
-                  <div>
-                    <h4>Locations:</h4>
-                    <p>
-                      {pokemon.pokemon_v2_encounters
-                        .slice(0, 3)
-                        .map((encounter, index) =>
-                          encounter.pokemon_v2_locationarea &&
-                          encounter.pokemon_v2_locationarea.name ? (
-                            <li key={index}>
-                              {encounter.pokemon_v2_locationarea.name}
-                            </li>
-                          ) : null
-                        )}
-                    </p>
-                  </div>
-                )}
-                <img src={pokemon.image} alt="chef-pokemon" />
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
+      <Staff pokemons={pokemons} />
     </div>
   );
 }
