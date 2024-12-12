@@ -23,9 +23,9 @@ const BurgerCard: React.FC<BurgerCardProps> = ({
 }) => (
   <div
     onClick={onClick}
-    className={`card-wrapper p-6 hover:bg-white rounded-lg hover:rounded-3xl transition-all duration-200 ${additionalClass}`}
+    className={`card-wrapper p-6 hover:bg-white rounded-lg hover:rounded-xl transition-all duration-200 ${additionalClass}`}
   >
-    <Image src={imgSrc} alt={title} className="rounded-3xl" />
+    <Image src={imgSrc} alt={title} className="rounded-xl" />
     <h3 className="font-semibold text-[20px] mt-[20px]">{title}</h3>
     <p className="mt-[0.2rem]">{description}</p>
   </div>

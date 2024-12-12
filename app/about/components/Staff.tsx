@@ -43,7 +43,7 @@ export default function Staff({ pokemons }: StaffProps) {
               ) && (
                 <div>
                   <h4>Locations:</h4>
-                  <p>
+                  <div>
                     {pokemon.pokemon_v2_encounters
                       .slice(0, 3)
                       .map((encounter, index) =>
@@ -54,7 +54,7 @@ export default function Staff({ pokemons }: StaffProps) {
                           </li>
                         ) : null
                       )}
-                  </p>
+                  </div>
                 </div>
               )}
               <img src={pokemon.image} alt="chef-pokemon" />

@@ -1,9 +1,7 @@
-"use client";
 import styles from "./page.module.css";
 import Image from "next/image";
 import BurgerIgm2 from "@/public/images/b2.png";
 import { fetchPokemons } from "@/app/lib/graphqlClient";
-import { useEffect, useState } from "react";
 import Staff from "./components/Staff";
 
 interface LocationArea {
@@ -24,38 +22,22 @@ type Pokemon = {
   pokemon_v2_encounters?: Encounter[];
 };
 
-export default function AboutPage() {
-  const [pokemons, setPokemons] = useState<Pokemon[]>([]);
-  const [loading, setLoading] = useState<boolean>(true);
-  const [error, setError] = useState<string | null>(null);
+export default async function AboutPage() {
+  let pokemons: Pokemon[] = [];
+  let error: string | null = null;
 
-  useEffect(() => {
-    const loadPokemons = async () => {
-      try {
-        const data = await fetchPokemons();
-        setPokemons(data);
-      } catch (error) {
-        setError("Failed to fetch Pokémon data");
-      } finally {
-        setLoading(false);
-      }
-    };
+  try {
+    pokemons = await fetchPokemons();
+  } catch (e) {
+    error = "Failed to fetch Pokémon data";
+  }
 
-    loadPokemons();
-  }, []);
-
-  if (loading) return <div className="loader"></div>;
   if (error) return <p>{error}</p>;
 
   return (
     <div>
       <div className={styles.aboutpageTop}>
         <div className={styles.imgWrapper}>
-          {/* <div className={styles.textBox}>
-            <p className={styles.aboutHeader}>vår passion</p>
-            <p className={styles.aboutHeader}>vårt liv</p>
-            <p className={styles.aboutHeader}>vår framtid</p>
-          </div> */}
           <div className={styles.verticalText}>OM OSS</div>
           <Image
             src={BurgerIgm2}
