@@ -38,7 +38,7 @@ const BurgerSection: React.FC<BurgerSectionProps> = ({
   imgBackground,
 }) => (
   <div
-    className={`${imgBackground} w-full h-[88vh] flex items-center justify-center flex-col md:clip_path`}
+    className={`${imgBackground} w-full h-[58vh] max-sm:h-[80vh] flex items-center justify-center flex-col`}
     style={{ borderRadius: "18px" }}
   >
     <div className="w-[90%] lg:w-[80%] grid grid-cols-1 md:grid-cols-2 justify-center items-center gap-[2em] mx-auto">
@@ -47,7 +47,7 @@ const BurgerSection: React.FC<BurgerSectionProps> = ({
         <h2 className="text-[40px] font-semibold text-yellow-400">
           Bäst säljare
         </h2>
-        <h2 className="text-[90px] leading-[5rem] uppercase text-white font-bold tracking-wide">
+        <h2 className="text-[40px] leading-[3rem] uppercase text-white font-bold tracking-wide">
           {title}
         </h2>
         <div className="backdrop-blur-md bg-white/30 border border-white/20 p-3 rounded-lg shadow-lg mt-[10px]">
@@ -86,13 +86,13 @@ export default function MainSlider() {
         imgSrc={BurgerIgm1}
         imgAlt="burger 1"
         title="godaste hamburgare"
-        imgBackground="bg-blue-950"
+        imgBackground="bg-pink-950"
       />
       <BurgerSection
         imgSrc={BurgerIgm2}
         imgAlt="burger 2"
         title="Lorem ipsum"
-        imgBackground="bg-red-950"
+        imgBackground="bg-purple-950"
       />
     </Carousel>
   );
