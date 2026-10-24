@@ -1,6 +1,6 @@
 import React from "react";
 interface detailsProps {
-  selectedPokemon;
+  selectedPokemon: any;
 }
 
 export default function StaffDetails() {
